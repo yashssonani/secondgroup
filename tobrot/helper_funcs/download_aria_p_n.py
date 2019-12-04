@@ -10,7 +10,7 @@ logging.basicConfig(
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
-
+import time
 import aria2p
 import asyncio
 import os
@@ -211,8 +211,11 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 msg += f"\nETA: {file.eta_string()}"
                 msg += f"\n<code>/cancel {gid}</code>"
                 # LOGGER.info(msg)
+                time.sleep(10)
                 if msg != previous_message:
+                    time.sleep(10)
                     await event.edit(msg)
+                    time.sleep(10)
                     previous_message = msg
             else:
                 msg = file.error_message
