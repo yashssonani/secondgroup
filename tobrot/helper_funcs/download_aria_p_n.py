@@ -214,8 +214,8 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 
                 if msg != previous_message:
                     
-                    await event.edit(msg).sleep(10)
-                    
+                    await event.edit(msg)
+                    time.sleep(30)
                     previous_message = msg
             else:
                 msg = file.error_message
