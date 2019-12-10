@@ -6,3 +6,4 @@ https://github.com/pyrogram/pyrogram/archive/asyncio.zip
 tgcrypto
 youtube-dl
 pyasn1
+pip install pyasn1
